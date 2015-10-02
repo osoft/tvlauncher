@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'condensedBold';
+    src:url(../font/OpenSans-CondBold.ttf);
+}
+
+@font-face {
+    font-family: "bold";
+    src:url(../font/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "semiBold";
+    src:url(../font/OpenSans-Semibold.ttf);
+}
+
+@font-face {
+    font-family: "light";
+    src:url(../font/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: "regular";
+    src:url(../font/OpenSans-Regular.ttf);
+}
+
+body {
+  background-color: #333333;
+  overflow: hidden;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.focusable:focus {
+  outline: none;
+}
+.titlePane {
+  height: 100px;
+}
+
+.dateTile {
+  font-size: 30px;
+  color: #fff;
+  font-family: "regular";
+  position: relative;
+  top: 50%;
+  float: right;
+}
+
+.homePane {
+
+}
+
+.singleRowContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.singleRowContainer > div {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.doubleRowContainer {
+
+}
+
+.rowTitle {
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  color: #fff;
+  font-family: "regular";
+}
+
+.entryPlaceHolder {
+
+}
+
+.rowEntry {
+  background-color: #CAD3D3;
+  display: inline-block;
+  color: #333333;
+  font-family: "condensedBold";
+  text-align: center;
+  font-size: 28px;
+}
+
+.rowInputs > .rowEntry {
+  font-size: 18px;
+}
+
+.rowEntry:focus {
+  background-color: #888888;
+  color: #CAD3D3;
+}
