@@ -1,7 +1,12 @@
 var t0 = 0;
 $(window).load(function() {
+  $("body > div").css("display", "none");
+
+  $(".initDialog").css("display", "block");
+
   $(".initDialog button").click(function () {
     // goFullScreen();
+    $("body > div").css("display", "block");
     $('div.initDialog').css("display", "none");
     init();
   });
