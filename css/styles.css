@@ -62,6 +62,14 @@ body {
 .singleRowContainer > div {
   white-space: nowrap;
   overflow-x: hidden;
+  font-size: 0;
+}
+
+
+.verticalRowContainer > div {
+  white-space: nowrap;
+  overflow-x: hidden;
+  font-size: 0;
 }
 
 .doubleRowContainer {
@@ -87,6 +95,10 @@ body {
   font-family: "condensedBold";
   text-align: center;
   font-size: 28px;
+}
+
+.verticalRowContainer .rowEntry {
+
 }
 
 .rowInputs > .rowEntry {
@@ -126,4 +138,30 @@ body {
   text-align: center;
   font-size: 30px;
   color: #333333;
+}
+
+.leftTitlePane {
+  display: inline-block;
+  float: left;
+  height: 100%;
+  position: absolute;
+}
+
+.titleTile {
+  background-color: #CAD3D3;
+  color: #333333;
+  left: 50%;
+  top: 50%;
+  position: relative;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "condensedBold";
+  text-align: center;
+  font-size: 28px;
+}
+
+.verticalRowContainer {
+  display: inline-block;
+  float: right;
+  overflow-y: hidden;
+  
 }

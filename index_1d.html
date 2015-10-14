@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>2D Experiment</title>
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="js/jquery-2.1.4.js"></script>
+  <script src="js/jquery.scrollTo.js"></script>
+  <script src="js/dpad-nav.js"></script>
+
+</head>
+
+<body>
+  <div class="initDialog" style="display: none;">
+    <div>
+      <div><span>Use arrow keys and Enter on you keyboard.</span></div>
+      <div><span>Windows users: press F11 to go full screen</span></div>
+      <div><span>MacOS X users: press ⇧Shift + ⌘Cmd + F to go full screen</span></div>
+      <button id="btnGoFullScreen">Start</button>
+    </div>
+  </div>
+  <div class="titlePane">
+    <div class="dateTile"></div>
+  </div>
+  <div class="homePane">
+    <div class="singleRowContainer">
+      <div class="rowTiles">
+        <div>
+          <div class="entryPlaceHolder">&nbsp;</div>
+          <div class="rowEntry">&nbsp;</div>
+          <div class="rowEntry">NETFLIX</div>
+          <div class="rowEntry">YouTube</div>
+          <div class="rowEntry">amazon</div>
+          <div class="rowEntry">hulu</div>
+          <div class="rowEntry">Inputs</div>
+          <div class="rowEntry allapps" id="btnApps">Apps</div>
+          <div class="rowEntry target">USA Today</div>
+          <div class="rowEntry">Settings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/main_1d.js"></script>
+</body>
+</html>
