@@ -27,6 +27,8 @@ body {
   background-color: #333333;
   overflow: hidden;
   height: 100%;
+  margin-left: 0px;
+margin-top: 0px;
 }
 
 ::-webkit-scrollbar {
@@ -163,5 +165,12 @@ body {
   display: inline-block;
   float: right;
   overflow-y: hidden;
-  
+
+}
+
+iframe {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-width: 0;
 }

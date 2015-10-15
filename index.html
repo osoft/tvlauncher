@@ -4,118 +4,26 @@
 <head>
   <meta charset="utf-8">
 
-  <title>2D Experiment</title>
+  <title>UX Experiment</title>
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="js/jquery-2.1.4.js"></script>
   <script src="js/jquery.scrollTo.js"></script>
   <script src="js/dpad-nav.js"></script>
+  <script src="js/main.js"></script>
 
 </head>
 
 <body>
-  <div class="titlePane">
-    <div class="dateTile"></div>
-  </div>
-  <div class="homePane">
-    <div class="singleRowContainer">
-      <div class="rowTitle">Recommendations</div>
-      <div class="rowTiles">
-        <div class="entryPlaceHolder">&nbsp;</div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-      </div>
-    </div>
-    <div class="singleRowContainer">
-      <div class="rowTitle">Featured Apps</div>
-      <div class="rowTiles">
-        <div class="entryPlaceHolder">&nbsp;</div>
-        <div class="rowEntry">NETFLIX</div>
-        <div class="rowEntry">YouTube</div>
-        <div class="rowEntry">amazon</div>
-        <div class="rowEntry">hulu</div>
-      </div>
-    </div>
-    <div class="singleRowContainer">
-      <div class="rowTitle">Inputs</div>
-      <div class="rowTiles rowInputs">
-        <div class="entryPlaceHolder">&nbsp;</div>
-        <div class="rowEntry">Cable/Antenna</div>
-        <div class="rowEntry">HDMI 1</div>
-        <div class="rowEntry">HDMI 1</div>
-        <div class="rowEntry">HDMI 1</div>
-        <div class="rowEntry">HDMI 1</div>
-        <div class="rowEntry">AV</div>
-        <div class="rowEntry">Component</div>
-      </div>
-    </div>
-    <div class="singleRowContainer">
-      <div class="rowTitle">Apps</div>
-      <div class="rowTiles">
-        <div>
-          <div class="entryPlaceHolder">&nbsp;</div>
-          <div class="rowEntry">NETFLIX</div>
-          <div class="rowEntry">YouTube</div>
-          <div class="rowEntry">amazon</div>
-          <div class="rowEntry">hulu</div>
-          <div class="rowEntry">HBO Go</div>
-          <div class="rowEntry">Sling TV</div>
-          <div class="rowEntry">USA Today</div>
-          <div class="rowEntry target">CBS NEWS</div>
-          <div class="rowEntry">FOX NEWS</div>
-          <div class="rowEntry">NBA</div>
-          <div class="rowEntry">MLB.TV</div>
-          <div class="rowEntry">PBS KIDS</div>
-        </div>
-        <div>
-          <div class="entryPlaceHolder">&nbsp;</div>
-          <div class="rowEntry">Pandora</div>
-          <div class="rowEntry">vevo</div>
-          <div class="rowEntry">Weather</div>
-          <div class="rowEntry">foodnetwork</div>
-          <div class="rowEntry">musixmatch</div>
-          <div class="rowEntry">BuzzFeed</div>
-          <div class="rowEntry">Aol On</div>
-          <div class="rowEntry">YuppTV</div>
-          <div class="rowEntry">TED</div>
-          <div class="rowEntry">BloombergTV</div>
-          <div class="rowEntry">RedBull TV</div>
-          <div class="rowEntry">c|net</div>
-        </div>
-      </div>
-    </div>
-    <div class="singleRowContainer">
-      <div class="rowTitle">Games</div>
-      <div class="rowTiles">
-        <div class="entryPlaceHolder">&nbsp;</div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-      </div>
-    </div>
-    <div class="singleRowContainer">
-      <div class="rowTitle">Settings</div>
-      <div class="rowTiles">
-        <div class="entryPlaceHolder">&nbsp;</div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-        <div class="rowEntry"></div>
-      </div>
+  <div class="initDialog" style="display: none;">
+    <div>
+      <div><span>Use arrow keys and Enter on you keyboard.</span></div>
+      <div><span>Windows users: press F11 to go full screen</span></div>
+      <div><span>MacOS X users: press ⇧Shift + ⌘Cmd + F to go full screen</span></div>
+      <button id="btnGoFullScreen">Start</button>
     </div>
   </div>
-  <script src="js/main.js"></script>
+<!-- <iframe id='test1d' src='index_1d.html' style="display:none"></iframe>
+<iframe id='test2d' src='index_2d.html' style="display:none"></iframe> -->
 </body>
 </html>

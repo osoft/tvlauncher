@@ -63,12 +63,12 @@ function init() {
     dPadNav.scanFocusables(".rowEntry");
   });
 
-  $('.allapps').keypress(function (e) {
-    if (e.keyCode != 13) {
-      return;
-    }
-    window.location.replace("index_1d_apps.html");
-  });
+  // $('.allapps').keypress(function (e) {
+  //   if (e.keyCode != 13) {
+  //     return;
+  //   }
+  //   window.location.replace("index_1d_apps.html");
+  // });
   $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
       return;

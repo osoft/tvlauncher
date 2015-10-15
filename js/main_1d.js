@@ -60,7 +60,10 @@ function init() {
     if (e.keyCode != 13) {
       return;
     }
-    window.location.replace("index_1d_apps.html");
+
+    // usageData += "|" + (getTimeStamp() - t0);
+    parent.logUsage("index_1d", usageData, getTimeStamp() - t0);
+    // window.location.replace("index_1d_apps.html");
   });
   $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
@@ -78,22 +81,25 @@ function init() {
   $(".rowEntry:first").focus();
 }
 
-var usageData = "-----DO-NOT-EDIT-----";
+var usageData = "";
 
 $(document).on("keydown", function (e) {
     //console.log("Try Move focus: keyup " + e);
     switch (e.keyCode) {
         case 39: // Right
-            usageData += "r";
+            usageData += "R";
             break;
         case 37: // Left
-            usageData += "l";
+            usageData += "L";
             break;
         case 38: // Up
-            usageData += "u";
+            usageData += "U";
             break;
         case 40: // Down
-            usageData += "d";
+            usageData += "D";
+            break;
+        case 13:
+            usageData += "E";
             break;
         default:
             break;

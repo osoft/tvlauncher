@@ -1,78 +1,23 @@
 var t0 = 0;
+var tests = ["test1d", "test2d"];
+var results = [];
+
 $(window).load(function() {
-  $("body > div").css("display", "none");
 
-  $(".initDialog").css("display", "block");
-
-  $(".initDialog button").click(function () {
-    // goFullScreen();
-    $("body > div").css("display", "block");
-    $('div.initDialog').css("display", "none");
-    init();
+  $(".initDialog").css("display", "inherit");
+  $("#btnGoFullScreen").click(function(e) {
+    // $("#test1d").css("display","block");
+    // document.getElementById('test1d').contentWindow.location.reload();
+    $(".initDialog").css("display", "none");
+    goFullScreen();
+    launchTest("index_1d");
   });
-
-  $(".initDialog button").focus();
-
 });
-
-function init() {
-  t0 = getTimeStamp();
-  // init row entries
-  $('.rowEntry').addClass("focusable");
-  $('.rowEntry').each(function (index, element) {
-    $(element).attr("id", "rowEntry_" + index);
-    $(element).attr("tabindex", "-1");
-  })
-
-  // init dimension
-  var windowWidth = $(window).width();
-  var windowHeight = $(window).height();
-
-  var tileWidth = windowWidth * 0.125;
-  var tileHeight = tileWidth * 9 / 16;
-  var tileMargin = windowWidth * 0.00625;
-
-  var pageMargin = windowWidth * 0.05;
-
-  addStyleString(".rowEntry { margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
-  addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
-  addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
-  addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
-
-  // page behaviors
-
-  // $(".singleRowContainer:first > div > .rowEntry").focus(function () {
-  $(".rowEntry").focus(function () {
-    // window.scrollTo(0,0);
-    $(window).scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2, left: 0}; }});
-    if ($(this).parent().hasClass("rowTiles")) {
-      $(this).parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
-    }
-    if ($(this).parent().parent().hasClass("rowTiles")) {
-      $(this).parent().parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
-    }
-    dPadNav.scanFocusables(".rowEntry");
-  });
-  $('.target').keypress(function (e) {
-    if (e.keyCode != 13) {
-      return;
-    }
-    usageData += "|" + (getTimeStamp() - t0);
-    window.location.replace("https://docs.google.com/forms/d/1zIlhBDjh7gX25fBpLxNrVC3S1ZbJnPunyPctbCAngpg/viewform?entry.1372249966=" + usageData);
-  })
-
-
-  // init date
-  var d = new Date();
-  $('.dateTile').text((d.getMonth() + 1) + "/" + d.getDate());
-
-  $(".rowEntry:first").focus();
-}
 
 var usageData = "-----DO-NOT-EDIT-----";
 
 $(document).on("keydown", function (e) {
-    //console.log("Try Move focus: keyup " + e);
+    console.log("Try Move focus: keyup " + e);
     switch (e.keyCode) {
         case 39: // Right
             usageData += "r";
@@ -91,6 +36,20 @@ $(document).on("keydown", function (e) {
     }
 });
 
+function launchTest(testId) {
+  var iframe = document.createElement('iframe');
+  // iframe.style.display = "none";
+  iframe.src = testId + ".html";
+  iframe.setAttribute("id", testId);
+  document.body.appendChild(iframe);
+}
+
+function logUsage(testId, userInput, timeElapsed) {
+  results.push({"id": testId,
+                "input": userInput,
+                "time": timeElapsed});
+}
+
 function getTimeStamp() {
   return Math.floor(new Date().valueOf() / 1000);
 }
@@ -107,7 +66,8 @@ function goFullScreen() {
 	document.mozFullScreenEnabled ||
 	document.msFullscreenEnabled
   ) {
-    var i = $("body").get(0);
+    // var i = $("body").get(0);
+    var i = document.documentElement;
     if (i.requestFullscreen) {
     	i.requestFullscreen();
     } else if (i.webkitRequestFullscreen) {
