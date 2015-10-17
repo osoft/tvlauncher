@@ -112,7 +112,7 @@ margin-top: 0px;
   color: #CAD3D3;
 }
 
-.initDialog {
+.darkDialog {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -120,7 +120,7 @@ margin-top: 0px;
   z-index: 999;
 }
 
-.initDialog > div {
+.darkDialog > div {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -128,14 +128,14 @@ margin-top: 0px;
   text-align: center;
 }
 
-.initDialog span {
+.darkDialog span {
   font-family: "condensedBold";
   text-align: center;
   font-size: 30px;
   color: #eeeeee;
 }
 
-.initDialog button {
+.darkDialog button {
   font-family: "condensedBold";
   text-align: center;
   font-size: 30px;

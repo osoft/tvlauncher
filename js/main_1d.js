@@ -40,6 +40,7 @@ function init() {
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
   addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
+  addStyleString(".singleRowContainer { position: absolute; top: 50%; transform: translateY(-50%); }");
 
   // page behaviors
 
@@ -48,9 +49,11 @@ function init() {
     // window.scrollTo(0,0);
     $(window).scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2, left: 0}; }});
     if ($(this).parent().hasClass("rowTiles")) {
+      $(this).parent().stop();
       $(this).parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
     }
     if ($(this).parent().parent().hasClass("rowTiles")) {
+      $(this).parent().parent().stop();
       $(this).parent().parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
     }
     dPadNav.scanFocusables(".rowEntry");
@@ -62,8 +65,9 @@ function init() {
     }
 
     // usageData += "|" + (getTimeStamp() - t0);
-    parent.logUsage("index_1d", usageData, getTimeStamp() - t0);
-    // window.location.replace("index_1d_apps.html");
+    // parent.logUsage("index_1d", usageData, getTimeStamp() - t0);
+    reportUsage();
+    window.location.replace("index_1d_apps.html");
   });
   $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
@@ -81,56 +85,8 @@ function init() {
   $(".rowEntry:first").focus();
 }
 
-var usageData = "";
-
-$(document).on("keydown", function (e) {
-    //console.log("Try Move focus: keyup " + e);
-    switch (e.keyCode) {
-        case 39: // Right
-            usageData += "R";
-            break;
-        case 37: // Left
-            usageData += "L";
-            break;
-        case 38: // Up
-            usageData += "U";
-            break;
-        case 40: // Down
-            usageData += "D";
-            break;
-        case 13:
-            usageData += "E";
-            break;
-        default:
-            break;
-    }
-});
-
-function getTimeStamp() {
-  return Math.floor(new Date().valueOf() / 1000);
-}
 function addStyleString(str) {
     var node = document.createElement('style');
     node.innerHTML = str;
     document.body.appendChild(node);
-}
-
-function goFullScreen() {
-  if (
-	document.fullscreenEnabled ||
-	document.webkitFullscreenEnabled ||
-	document.mozFullScreenEnabled ||
-	document.msFullscreenEnabled
-  ) {
-    var i = $("body").get(0);
-    if (i.requestFullscreen) {
-    	i.requestFullscreen();
-    } else if (i.webkitRequestFullscreen) {
-    	i.webkitRequestFullscreen();
-    } else if (i.mozRequestFullScreen) {
-    	i.mozRequestFullScreen();
-    } else if (i.msRequestFullscreen) {
-    	i.msRequestFullscreen();
-    }
-  }
 }

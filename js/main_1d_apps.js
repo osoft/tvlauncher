@@ -73,61 +73,16 @@ function init() {
     if (e.keyCode != 13) {
       return;
     }
-    usageData += "|" + (getTimeStamp() - t0);
-    window.location.replace("https://docs.google.com/forms/d/1zIlhBDjh7gX25fBpLxNrVC3S1ZbJnPunyPctbCAngpg/viewform?entry.1372249966=" + usageData);
+    reportUsage();
+    parent.proceedToNextTest();
   })
 
 
   $(".rowEntry:first").focus();
 }
 
-var usageData = "-----DO-NOT-EDIT-----";
-
-$(document).on("keydown", function (e) {
-    //console.log("Try Move focus: keyup " + e);
-    switch (e.keyCode) {
-        case 39: // Right
-            usageData += "r";
-            break;
-        case 37: // Left
-            usageData += "l";
-            break;
-        case 38: // Up
-            usageData += "u";
-            break;
-        case 40: // Down
-            usageData += "d";
-            break;
-        default:
-            break;
-    }
-});
-
-function getTimeStamp() {
-  return Math.floor(new Date().valueOf() / 1000);
-}
 function addStyleString(str) {
     var node = document.createElement('style');
     node.innerHTML = str;
     document.body.appendChild(node);
-}
-
-function goFullScreen() {
-  if (
-	document.fullscreenEnabled ||
-	document.webkitFullscreenEnabled ||
-	document.mozFullScreenEnabled ||
-	document.msFullscreenEnabled
-  ) {
-    var i = $("body").get(0);
-    if (i.requestFullscreen) {
-    	i.requestFullscreen();
-    } else if (i.webkitRequestFullscreen) {
-    	i.webkitRequestFullscreen();
-    } else if (i.mozRequestFullScreen) {
-    	i.mozRequestFullScreen();
-    } else if (i.msRequestFullscreen) {
-    	i.msRequestFullscreen();
-    }
-  }
 }
