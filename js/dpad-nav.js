@@ -111,8 +111,8 @@ dPadNav.scanFocusables = function(selector, scope, preference) {
         var offsetVal = $(element).offset();
         var height = $(element).height();
         var width = $(element).width();
-        offsetVal = {left: offsetVal.left + width / 2,
-            top: offsetVal.top + height / 2};
+        // offsetVal = {left: offsetVal.left + width / 2,
+        //     top: offsetVal.top + height / 2};
         //console.log("Scanning: " + $(element).attr("id") + " " + offsetVal.left + "," + offsetVal.top);
         // var uOffsetVal = {left: offsetVal.left, top: offsetVal.top - height / 2};
         // var dOffsetVal = {left: offsetVal.left, top: offsetVal.top + height / 2};
@@ -207,6 +207,19 @@ dPadNav.scanFocusables = function(selector, scope, preference) {
 
     });
 }
+
+dPadNav.overrideMovement = function(idSource, direction, idTarget) {
+  sourceEl = dPadNav.getFocusable(idSource);
+  if (direction === "left") {
+    sourceEl.left.id = idTarget;
+  } else if (direction === "right") {
+    sourceEl.right.id = idTarget;
+  } else if (direction === "up") {
+    sourceEl.up.id = idTarget;
+  } else if (direction === "down") {
+    sourceEl.down.id = idTarget;
+  }
+};
 
 dPadNav.focusDefaultItem = function() {
     if (dPadNav.focusables.length > 0) {

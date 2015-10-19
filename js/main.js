@@ -1,5 +1,5 @@
 var t0 = 0;
-var tests = ["index_1d", "index_2d"];
+var tests = ["index_1d", "index_2d", "index_2dh"];
 var currentTestIndex = 0;
 var results = [];
 

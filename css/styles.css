@@ -22,13 +22,15 @@
     font-family: "regular";
     src:url(../font/OpenSans-Regular.ttf);
 }
-
+div {
+  font-size: 0;
+}
 body {
   background-color: #333333;
   overflow: hidden;
   height: 100%;
   margin-left: 0px;
-margin-top: 0px;
+  margin-top: 0px;
 }
 
 ::-webkit-scrollbar {
@@ -173,4 +175,75 @@ iframe {
   height: 100%;
   width: 100%;
   border-width: 0;
+}
+
+.sectionContainer {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tileColumn {
+  display: inline-block;
+}
+
+.tileColumn > .rowEntry {
+  display: block !important;
+}
+
+.recommendationPoster {
+  background-color: #CAD3D3;
+  display: inline-block;
+  color: #333333;
+  font-family: "condensedBold";
+  text-align: center;
+  font-size: 28px;
+}
+
+.recommendationPoster:focus {
+    background-color: #888888;
+    color: #CAD3D3;
+}
+
+.featureAppHorizontal {
+  background-color: #CAD3D3;
+  display: inline-block;
+  color: #333333;
+  font-family: "condensedBold";
+  text-align: center;
+  font-size: 28px;
+}
+
+.featureAppHorizontal:focus {
+  background-color: #888888;
+  color: #CAD3D3;
+}
+
+
+.featureAppVertical {
+  background-color: #CAD3D3;
+  display: inline-block;
+  color: #333333;
+  font-family: "condensedBold";
+  text-align: center;
+  font-size: 28px;
+}
+
+.featureAppVertical:focus {
+  background-color: #888888;
+  color: #CAD3D3;
+}
+
+.horizontalScroller {
+  white-space: nowrap;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.sectionContainer > span {
+  font-size: 24px;
+  color: #fff;
+  font-family: "regular";
+  display: block;
+  margin-bottom: 10px;
 }
