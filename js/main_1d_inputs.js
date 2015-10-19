@@ -29,9 +29,12 @@ function init() {
   var windowWidth = $(window).width();
   var windowHeight = $(window).height();
 
-  var tileWidth = windowWidth * 0.1625;
-  var tileHeight = tileWidth;
-  var tileMargin = 1;
+  var tileWidth = windowWidth * 0.2;
+  var tileHeight = tileWidth * 9 / 16;
+  var tileMargin = windowWidth * 0.0125;
+
+  var titleTileWidth = windowWidth * 0.1625;
+  var leftTitlePaneWidth = windowWidth * 0.35;
 
   var pageMargin = windowWidth * 0.1;
 
@@ -39,47 +42,40 @@ function init() {
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
   addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
-  addStyleString(".singleRowContainer { position: absolute; top: 50%; transform: translateY(-50%); }");
-
+  addStyleString(".leftTitlePane { width: " + leftTitlePaneWidth + "px; }");
+  addStyleString(".titleTile { width: " + titleTileWidth + "px; height: " + titleTileWidth + "px; line-height: " + titleTileWidth + "px; }");
+  addStyleString(".verticalRowContainer { height: " + windowHeight + "px; }");
+  addStyleString(".verticalRowContainer > div { top: 50%; transform: translateY(-50%); position: relative; }");
   // page behaviors
 
   // $(".singleRowContainer:first > div > .rowEntry").focus(function () {
   $(".rowEntry").focus(function () {
     // window.scrollTo(0,0);
-     $(window).scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2, left: -windowWidth * 0.1625}; }});
+    //$(window).scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2, left: 0}; }});
+    $('.verticalRowContainer').scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2 + tileHeight / 2, left: 0}; }});
     // if ($(this).parent().hasClass("rowTiles")) {
-      // $(this).parent().parent().stop();
-      $(this).parent().parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin}; }});
+    //   $(this).parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
     // }
     // if ($(this).parent().parent().hasClass("rowTiles")) {
-      // $(this).parent().parent().stop();
-      // $(this).parent().parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-500}; }});
+    //   $(this).parent().parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
     // }
     dPadNav.scanFocusables(".rowEntry");
   });
 
-  $('.allapps').keypress(function (e) {
+  // $('.allapps').keypress(function (e) {
+  //   if (e.keyCode != 13) {
+  //     return;
+  //   }
+  //   window.location.replace("index_1d_apps.html");
+  // });
+  $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
       return;
     }
-    if (typeof(getQueryParams().type) != "undefined" && getQueryParams().type != "inputs") {
-      window.location.replace("index_1d_apps.html");
-    }
-  });
+    reportUsage();
+    parent.proceedToNextTest();
+  })
 
-  $('.inputs').keypress(function (e) {
-    if (e.keyCode != 13) {
-      return;
-    }
-    if (getQueryParams().type === "inputs") {
-      window.location.replace("index_1d_inputs.html");
-    }
-  });
-
-
-  // init date
-  var d = new Date();
-  $('.dateTile').text((d.getMonth() + 1) + "/" + d.getDate());
 
   $(".rowEntry:first").focus();
 }
@@ -88,19 +84,4 @@ function addStyleString(str) {
     var node = document.createElement('style');
     node.innerHTML = str;
     document.body.appendChild(node);
-}
-
-function getQueryParams() {
-    var qs = window.location.search;
-    qs = qs.split('+').join(' ');
-
-    var params = {},
-        tokens,
-        re = /[?&]?([^=]+)=([^&]*)/g;
-
-    while (tokens = re.exec(qs)) {
-        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-    }
-
-    return params;
 }

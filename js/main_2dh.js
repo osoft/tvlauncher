@@ -66,6 +66,12 @@ function init() {
       // $(this).parent().parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
     }
   });
+
+  if (getQueryParams().type === "inputs") {
+    $('.target').removeClass("target");
+    $('.inputsTarget').addClass("target");
+  }
+  
   $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
       return;

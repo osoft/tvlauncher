@@ -76,6 +76,7 @@ body {
   font-size: 0;
 }
 
+
 .doubleRowContainer {
 
 }
@@ -246,4 +247,12 @@ iframe {
   font-family: "regular";
   display: block;
   margin-bottom: 10px;
+}
+
+.overlayNotification {
+  color: #fff;
+  font-family: "light" ;
+  position: absolute;
+  font-size: 25px;
+  z-index: 998;
 }

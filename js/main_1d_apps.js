@@ -1,4 +1,3 @@
-var t0 = 0;
 $(window).load(function() {
   // $("body > div").css("display", "none");
   //

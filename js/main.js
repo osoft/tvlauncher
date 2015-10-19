@@ -1,7 +1,8 @@
-var t0 = 0;
 var tests = ["index_1d", "index_2d", "index_2dh"];
 var currentTestIndex = 0;
 var results = [];
+var testTypes = ["apps", "inputs"];
+var currentTypeIndex = 0;
 
 $(window).load(function() {
   tests = shuffle(tests);
@@ -13,11 +14,11 @@ $(window).load(function() {
     // document.getElementById('test1d').contentWindow.location.reload();
     $("#initDialog").css("display", "none");
     goFullScreen();
-    launchTest(tests[0]);
+    launchTest(tests[0], testTypes[0]);
   });
 });
 
-function launchTest(testId) {
+function launchTest(testId, testType) {
   var iframes = document.getElementsByTagName('iframe');
   for (var i = 0; i < iframes.length; i++) {
       iframes[i].parentNode.removeChild(iframes[i]);
@@ -25,16 +26,23 @@ function launchTest(testId) {
 
   var iframe = document.createElement('iframe');
   // iframe.style.display = "none";
-  iframe.src = testId + ".html" + '?rand=' + Math.round(Math.random() * 10000000);
+  iframe.src = testId + ".html" + '?type=' + testType + '&rand=' + Math.round(Math.random() * 10000000);
   // iframe.src = testId + ".html";
   iframe.setAttribute("id", testId);
   document.body.appendChild(iframe);
+
+  if (testType === "apps") {
+    $(".overlayNotification").text('Please find the app "CBS News"');
+  } else if (testType === "inputs") {
+    $(".overlayNotification").text('Please find HDMI-1 from inputs');
+  }
 }
 
-function logUsage(testId, userInput, timeElapsed) {
+function logUsage(testId, userInput, timeElapsed, type) {
   results.push({"id": testId,
                 "input": userInput,
-                "time": timeElapsed});
+                "time": timeElapsed,
+                "type": type});
 }
 
 function proceedToNextTest() {
@@ -43,11 +51,17 @@ function proceedToNextTest() {
     $("#timeoutDialog").css("display", "inherit");
     setTimeout(function() {
       $("#timeoutDialog").css("display", "none");
-      launchTest(tests[currentTestIndex]);
-    }, 5000);
+      launchTest(tests[currentTestIndex], testTypes[currentTypeIndex]);
+    }, 3000);
   } else {
-    alert("submit survey");
-    // window.location.replace("https://docs.google.com/forms/d/1zIlhBDjh7gX25fBpLxNrVC3S1ZbJnPunyPctbCAngpg/viewform?entry.1372249966=" + usageData);
+    if (currentTypeIndex >= testTypes.length - 1) {
+      alert("submit survey");
+      // window.location.replace("https://docs.google.com/forms/d/1zIlhBDjh7gX25fBpLxNrVC3S1ZbJnPunyPctbCAngpg/viewform?entry.1372249966=" + usageData);
+    } else {
+      currentTestIndex = -1;
+      currentTypeIndex++;
+      proceedToNextTest();
+    }
   }
 }
 

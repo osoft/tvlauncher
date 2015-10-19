@@ -51,6 +51,12 @@ function init() {
     }
     dPadNav.scanFocusables(".rowEntry");
   });
+
+  if (getQueryParams().type === "inputs") {
+    $('.target').removeClass("target");
+    $('.inputsTarget').addClass("target");
+  }
+  
   $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
       return;
