@@ -31,10 +31,11 @@ function launchTest(testId, testType) {
   iframe.setAttribute("id", testId);
   document.body.appendChild(iframe);
 
+  $("#spanIdx").text("Test " + (currentTestIndex + currentTypeIndex * tests.length + 1) + " of " + tests.length * testTypes.length);
   if (testType === "apps") {
-    $(".overlayNotification").text('Please find the app "CBS News"');
+    $("#spanTarget").text('Please find the app "CBS News"');
   } else if (testType === "inputs") {
-    $(".overlayNotification").text('Please find HDMI-1 from inputs');
+    $("#spanTarget").text('Please find "Cable/Antenna" from inputs');
   }
 }
 
