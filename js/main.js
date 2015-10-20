@@ -56,11 +56,11 @@ function proceedToNextTest() {
     } else {
       currentTypeIndex++;
     }
-    $("#timeoutDialog").css("display", "inherit");
-    setTimeout(function() {
-      $("#timeoutDialog").css("display", "none");
+    // $("#timeoutDialog").css("display", "inherit");
+    // setTimeout(function() {
+      // $("#timeoutDialog").css("display", "none");
       launchTest(tests[currentTestIndex], testTypes[currentTypeIndex]);
-    }, 1500);
+    // }, 1500);
   }
 }
 
