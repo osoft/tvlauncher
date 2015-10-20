@@ -1,7 +1,7 @@
 var tests = ["index_1d", "index_2d", "index_2dh"];
 var currentTestIndex = 0;
 var results = [];
-var testTypes = ["apps", "inputs"];
+var testTypes = ["inputs", "apps"];
 var currentTypeIndex = 0;
 
 $(window).load(function() {

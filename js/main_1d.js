@@ -63,7 +63,8 @@ function init() {
       return;
     }
     if (typeof(getQueryParams().type) != "undefined" && getQueryParams().type != "inputs") {
-      window.location.replace("index_1d_apps.html");
+      reportUsage();
+      window.location.replace("index_1d_apps.html" + window.location.search);
     }
   });
 
@@ -72,7 +73,8 @@ function init() {
       return;
     }
     if (getQueryParams().type === "inputs") {
-      window.location.replace("index_1d_inputs.html");
+      reportUsage();
+      window.location.replace("index_1d_inputs.html" + window.location.search);
     }
   });
 
