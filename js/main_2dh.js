@@ -58,7 +58,7 @@ function init() {
   // $(".singleRowContainer:first > div > .rowEntry").focus(function () {
   $(".focusable").focus(function () {
     // window.scrollTo(0,0);
-    // $(window).scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2, left: 0}; }});
+    $(window).scrollTo($(this), 250, {offset: function() { return {top:-windowHeight / 2, left: -windowWidth/2 + tileWidth/2}; }});
     if ($(this).parent().hasClass("rowTiles")) {
       // $(this).parent().scrollTo($(this), 250, {offset: function() { return {top:0, left: -pageMargin-5}; }});
     }
@@ -71,7 +71,7 @@ function init() {
     $('.target').removeClass("target");
     $('.inputsTarget').addClass("target");
   }
-  
+
   $('.target').keypress(function (e) {
     if (e.keyCode != 13) {
       return;

@@ -84,7 +84,7 @@ body {
 .rowTitle {
   height: 30px;
   line-height: 30px;
-  font-size: 24px;
+  font-size: 24px !important;
   color: #fff;
   font-family: "regular";
 }
@@ -255,4 +255,11 @@ iframe {
   position: absolute;
   font-size: 15px;
   z-index: 998;
+  text-shadow: 1px 1px #000000;
+}
+
+.overlayNotification #spanTarget {
+  font-size: 25px;
+  font-family: "regular";
+  text-shadow: 2px 2px #000000;
 }
