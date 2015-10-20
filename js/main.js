@@ -31,7 +31,7 @@ function launchTest(testId, testType) {
   iframe.setAttribute("id", testId);
   document.body.appendChild(iframe);
 
-  $("#spanIdx").text("Test " + (currentTestIndex + currentTypeIndex * tests.length + 1) + " of " + tests.length * testTypes.length);
+  $("#spanIdx").text("Test " + (currentTypeIndex + currentTestIndex * testTypes.length + 1) + " of " + tests.length * testTypes.length);
   if (testType === "apps") {
     $("#spanTarget").text('Please find the app "CBS News"');
   } else if (testType === "inputs") {
@@ -47,22 +47,20 @@ function logUsage(testId, userInput, timeElapsed, type) {
 }
 
 function proceedToNextTest() {
-  if (currentTestIndex < tests.length - 1) {
-    currentTestIndex++;
+  if (currentTestIndex >= tests.length - 1 && currentTypeIndex >= testTypes.length - 1) {
+      alert("submit survey");
+  } else {
+    if (currentTypeIndex >= testTypes.length - 1) {
+      currentTestIndex++;
+      currentTypeIndex = 0;
+    } else {
+      currentTypeIndex++;
+    }
     $("#timeoutDialog").css("display", "inherit");
     setTimeout(function() {
       $("#timeoutDialog").css("display", "none");
       launchTest(tests[currentTestIndex], testTypes[currentTypeIndex]);
-    }, 3000);
-  } else {
-    if (currentTypeIndex >= testTypes.length - 1) {
-      alert("submit survey");
-      // window.location.replace("https://docs.google.com/forms/d/1zIlhBDjh7gX25fBpLxNrVC3S1ZbJnPunyPctbCAngpg/viewform?entry.1372249966=" + usageData);
-    } else {
-      currentTestIndex = -1;
-      currentTypeIndex++;
-      proceedToNextTest();
-    }
+    }, 1500);
   }
 }
 
