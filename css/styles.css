@@ -82,11 +82,12 @@ body {
 }
 
 .rowTitle {
-  height: 30px;
-  line-height: 30px;
+  /*height: 30px;*/
+  /*line-height: 30px;*/
   font-size: 24px !important;
   color: #fff;
   font-family: "regular";
+
 }
 
 .entryPlaceHolder {
@@ -129,13 +130,23 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 85%;
+  width: 60%;
 }
+
+.darkDialog > div > div:first-of-type {
+  text-align: center;
+}
+
+.darkDialog > div > div {
+  text-align: left;
+}
+
+
 
 .darkDialog span {
   font-family: "regular";
-  text-align: center;
-  font-size: 30px;
+  text-align: left;
+  font-size: 24px;
   color: #eeeeee;
 }
 
@@ -251,14 +262,14 @@ iframe {
 }
 
 .overlayNotification {
-  color: #333333;
+  color: #eeeeee;
   font-family: "light" ;
   position: absolute;
-  font-size: 15px;
+  font-size: 18px;
   z-index: 998;
   width: 100%;
-  background-color: #aaaaff;
-  padding-left: 30px;
+  background-color: #00a6a9;
+  padding: 24px 24px 24px 24px;
 }
 
 .overlayNotification #spanTarget {
