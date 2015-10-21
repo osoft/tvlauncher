@@ -38,14 +38,21 @@ function init() {
 
   var pageMargin = windowWidth * 0.1;
 
-  addStyleString(".rowEntry { margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
+  var fzRegular = 0.02825 * windowWidth;
+  var fzLarge = fzRegular * 1.5;
+  var fzSmall = fzRegular * 0.6;
+
+  addStyleString(".rowEntry { font-size: " + fzSmall + "px; margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
   addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
   addStyleString(".leftTitlePane { width: " + leftTitlePaneWidth + "px; }");
-  addStyleString(".titleTile { width: " + titleTileWidth + "px; height: " + titleTileWidth + "px; line-height: " + titleTileWidth + "px; }");
+  addStyleString(".titleTile { font-size: " + fzRegular + "px; width: " + titleTileWidth + "px; height: " + titleTileWidth + "px; line-height: " + titleTileWidth + "px; }");
   addStyleString(".verticalRowContainer { height: " + windowHeight + "px; }");
   addStyleString(".verticalRowContainer > div { top: 50%; transform: translateY(-50%); position: relative; }");
+  addStyleString("body { font-size: " + 0.02825 * windowWidth + "px; }")
+
+
   // page behaviors
 
   // $(".singleRowContainer:first > div > .rowEntry").focus(function () {

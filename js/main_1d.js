@@ -35,7 +35,11 @@ function init() {
 
   var pageMargin = windowWidth * 0.1;
 
-  addStyleString(".rowEntry { margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
+  var fzRegular = 0.02825 * windowWidth;
+  var fzLarge = fzRegular * 1.5;
+  var fzSmall = fzRegular * 0.6;
+
+  addStyleString(".rowEntry { font-size:" + fzRegular + "px; margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
   addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");

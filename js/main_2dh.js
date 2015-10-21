@@ -42,9 +42,13 @@ function init() {
 
   var sectionMargin = windowWidth * 0.025;
 
-  addStyleString(".rowEntry { margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
+  var fzRegular = 0.03125 * windowWidth;
+  var fzLarge = fzRegular * 1.5;
+  var fzSmall = fzRegular * 0.6;
+
+  addStyleString(".rowEntry { font-size: " + fzSmall + "px; margin-right: " + tileMargin + "px; margin-bottom: " + tileMargin + "px; line-height: " + tileHeight + "px; height: " + tileHeight + "px; width: " + tileWidth + "px;}");
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
-  addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
+  addStyleString(".rowTitle { font-size: " + fzRegular + "px; margin-left: " + pageMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
 
   addStyleString(".recommendationPoster { line-height: " + posterHeight + "px; height: " + posterHeight + "px; width: " + posterWidth + "px;}");
@@ -52,8 +56,9 @@ function init() {
   addStyleString(".featureAppVertical { margin-right: " + tileMargin + "px; line-height: " + (2 * tileHeight + tileMargin) + "px; height: " + (2 * tileHeight + tileMargin) + "px; width: " + featureVerticalWidth + "px;}");
   addStyleString(".sectionContainer { margin-right: " + sectionMargin + "px; }");
   addStyleString("body {margin-left: " + sectionMargin + "px;}")
+
   // page behaviors
-    dPadNav.scanFocusables();
+  dPadNav.scanFocusables();
 
   // $(".singleRowContainer:first > div > .rowEntry").focus(function () {
   $(".focusable").focus(function () {

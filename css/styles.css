@@ -97,7 +97,7 @@ body {
   background-color: #CAD3D3;
   display: inline-block;
   color: #333333;
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 28px;
 }
@@ -132,14 +132,14 @@ body {
 }
 
 .darkDialog span {
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 30px;
   color: #eeeeee;
 }
 
 .darkDialog button {
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 30px;
   color: #333333;
@@ -159,7 +159,7 @@ body {
   top: 50%;
   position: relative;
   transform: translateX(-50%) translateY(-50%);
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 28px;
 }
@@ -195,7 +195,7 @@ iframe {
   background-color: #CAD3D3;
   display: inline-block;
   color: #333333;
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 28px;
 }
@@ -209,7 +209,7 @@ iframe {
   background-color: #CAD3D3;
   display: inline-block;
   color: #333333;
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 28px;
 }
@@ -224,7 +224,7 @@ iframe {
   background-color: #CAD3D3;
   display: inline-block;
   color: #333333;
-  font-family: "condensedBold";
+  font-family: "bold";
   text-align: center;
   font-size: 28px;
 }
