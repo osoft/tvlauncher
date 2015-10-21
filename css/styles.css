@@ -107,7 +107,7 @@ body {
 }
 
 .rowInputs > .rowEntry {
-  font-size: 18px;
+  /*font-size: 18px;*/
 }
 
 .rowEntry:focus {
@@ -129,10 +129,11 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 85%;
 }
 
 .darkDialog span {
-  font-family: "bold";
+  font-family: "regular";
   text-align: center;
   font-size: 30px;
   color: #eeeeee;
@@ -250,18 +251,17 @@ iframe {
 }
 
 .overlayNotification {
-  color: #fff;
+  color: #333333;
   font-family: "light" ;
   position: absolute;
   font-size: 15px;
   z-index: 998;
-  text-shadow: 1px 1px #000000;
   width: 100%;
   background-color: #aaaaff;
+  padding-left: 30px;
 }
 
 .overlayNotification #spanTarget {
   font-size: 25px;
   font-family: "regular";
-  text-shadow: 2px 2px #000000;
 }
