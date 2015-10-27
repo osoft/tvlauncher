@@ -34,6 +34,6 @@ function getTimeStamp() {
 }
 
 function reportUsage() {
-  parent.logUsage(window.location.pathname.substring(1), usageData, getTimeStamp() - t0, getQueryParams().type);
+  parent.logUsage(window.location.pathname.substring(1).split('/').pop(), usageData, getTimeStamp() - t0, getQueryParams().type);
   // alert("asdfas");
 }
