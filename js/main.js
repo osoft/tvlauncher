@@ -49,6 +49,35 @@ function logUsage(testId, userInput, timeElapsed, type) {
 function proceedToNextTest() {
   if (currentTestIndex >= tests.length - 1 && currentTypeIndex >= testTypes.length - 1) {
       alert("submit survey");
+      var paramString = "?";
+      var i = 0;
+      for (i = 0; i < results.length; i++) {
+        var r = results[i];
+
+        if (i != 0) {
+          paramString += "&";
+        }
+
+        if (r.id === "index_1d.html" && r.type === "apps") {
+          paramString += "1dma=" + r.time + "|" + r.input;
+        } else if (r.id === "index_1d.html" && r.type === "inputs") {
+          paramString += "1dmi=" + r.time + "|" + r.input;
+        } else if (r.id === "index_1d_apps.html" && r.type === "apps") {
+          paramString += "1daa=" + r.time + "|" + r.input;
+        } else if (r.id === "index_1d_inputs.html" && r.type === "inputs") {
+          paramString += "1dii=" + r.time + "|" + r.input;
+        } else if (r.id === "index_2d.html" && r.type === "apps") {
+          paramString += "2dva=" + r.time + "|" + r.input;
+        } else if (r.id === "index_2d.html" && r.type === "inputs") {
+          paramString += "2dvi=" + r.time + "|" + r.input;
+        } else if (r.id === "index_2dh.html" && r.type === "apps") {
+          paramString += "2dha=" + r.time + "|" + r.input;
+        } else if (r.id === "index_2dh.html" && r.type === "inputs") {
+          paramString += "2dhi=" + r.time + "|" + r.input;
+        }
+
+      }
+      window.location.replace("survey2.html" + paramString);
   } else {
     if (currentTypeIndex >= testTypes.length - 1) {
       currentTestIndex++;
