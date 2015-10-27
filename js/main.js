@@ -48,7 +48,6 @@ function logUsage(testId, userInput, timeElapsed, type) {
 
 function proceedToNextTest() {
   if (currentTestIndex >= tests.length - 1 && currentTypeIndex >= testTypes.length - 1) {
-      alert("submit survey");
       var paramString = "?";
       var i = 0;
       for (i = 0; i < results.length; i++) {
