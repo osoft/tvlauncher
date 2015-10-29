@@ -43,7 +43,7 @@ function init() {
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
   addStyleString(".rowTitle { margin-left: " + pageMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
-  addStyleString(".singleRowContainer { position: absolute; top: 50%; transform: translateY(-50%); }");
+  addStyleString(".singleRowContainer { position: absolute; top: 50%; transform: translateY(-65%); }");
 
   // page behaviors
 

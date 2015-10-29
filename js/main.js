@@ -16,7 +16,8 @@ $(window).load(function() {
     goFullScreen();
     setTimeout(function() {
       var frameHeight = $('.overlayNotification').outerHeight();
-      addStyleString("iframe { padding-top: " + frameHeight + "px; }");
+      addStyleString("iframe { padding-top: " + frameHeight + "px; height: " + ($(window).height() - frameHeight) + "px; }");
+
       launchTest(tests[0], testTypes[0]);
     }, 1000);
   });
