@@ -40,7 +40,7 @@ function launchTest(testId, testType) {
   if (testType === "apps") {
     $("#spanTarget").text('Please find the app "CBS News"');
   } else if (testType === "inputs") {
-    $("#spanTarget").text('Please find "PlayStation" from inputs');
+    $("#spanTarget").text('Please find "PlayStation" from Inputs');
   }
 }
 
