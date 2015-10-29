@@ -14,7 +14,11 @@ $(window).load(function() {
     // document.getElementById('test1d').contentWindow.location.reload();
     $("#initDialog").css("display", "none");
     goFullScreen();
-    launchTest(tests[0], testTypes[0]);
+    setTimeout(function() {
+      var frameHeight = $('.overlayNotification').outerHeight();
+      addStyleString("iframe { padding-top: " + frameHeight + "px; }");
+      launchTest(tests[0], testTypes[0]);
+    }, 1000);
   });
 });
 
