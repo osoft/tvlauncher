@@ -24,24 +24,38 @@ $(window).load(function() {
 });
 
 function launchTest(testId, testType) {
-  var iframes = document.getElementsByTagName('iframe');
-  for (var i = 0; i < iframes.length; i++) {
-      iframes[i].parentNode.removeChild(iframes[i]);
-  }
-
-  var iframe = document.createElement('iframe');
-  // iframe.style.display = "none";
-  iframe.src = testId + ".html" + '?type=' + testType + '&rand=' + Math.round(Math.random() * 10000000);
-  // iframe.src = testId + ".html";
-  iframe.setAttribute("id", testId);
-  document.body.appendChild(iframe);
-
-  $("#spanIdx").text("Test " + (currentTypeIndex + currentTestIndex * testTypes.length + 1) + " of " + tests.length * testTypes.length);
   if (testType === "apps") {
-    $("#spanTarget").text('Please find the app "CBS News"');
+    $('#timeoutDialog span:first').text("In the next screen, please find 'CBS News' from Apps");
   } else if (testType === "inputs") {
-    $("#spanTarget").text('Please find "PlayStation" from Inputs');
+    $('#timeoutDialog span:first').text("In the next screen, please find 'PlayStation' from Inputs");
   }
+  $('#timeoutDialog').css("display", "inherit");
+
+  $('#btnNext').focus();
+  $('#btnNext').click(function() {
+    $('#timeoutDialog').css("display", "none");
+
+
+    var iframes = document.getElementsByTagName('iframe');
+    for (var i = 0; i < iframes.length; i++) {
+        iframes[i].parentNode.removeChild(iframes[i]);
+    }
+
+    var iframe = document.createElement('iframe');
+    // iframe.style.display = "none";
+    iframe.src = testId + ".html" + '?type=' + testType + '&rand=' + Math.round(Math.random() * 10000000);
+    // iframe.src = testId + ".html";
+    iframe.setAttribute("id", testId);
+    document.body.appendChild(iframe);
+
+    $("#spanIdx").text("Test " + (currentTypeIndex + currentTestIndex * testTypes.length + 1) + " of " + tests.length * testTypes.length);
+    if (testType === "apps") {
+      $("#spanTarget").text('Please find the app "CBS News"');
+    } else if (testType === "inputs") {
+      $("#spanTarget").text('Please find "PlayStation" from Inputs');
+    }
+  });
+
 }
 
 function logUsage(testId, userInput, timeElapsed, type) {
