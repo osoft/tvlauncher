@@ -40,7 +40,8 @@ function init() {
   addStyleString(".entryPlaceHolder { width: " + pageMargin + "px; display: inline-block; }");
   addStyleString(".rowTitle { font-size: " + fzRegular + "px !important; margin-left: " + pageMargin + "px; margin-bottom: " + tileMargin + "px; }");
   addStyleString(".dateTile { margin-right: " + pageMargin + "px; }");
-  // addStyleString(".rowInputs > .rowEntry { font-size: " + fzSmall + "px; }")
+  addStyleString(".singleRowContainer:first-of-type .rowEntry { font-size: " + fzSmall + "px; }");
+
 
   // page behaviors
 
