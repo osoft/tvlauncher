@@ -141,7 +141,9 @@ body {
   text-align: left;
 }
 
-
+#timeoutDialog.darkDialog > div > div {
+  text-align: center;
+}
 
 .darkDialog span {
   font-family: "regular";
@@ -149,6 +151,11 @@ body {
   font-size: 24px;
   color: #eeeeee;
 }
+
+#timeoutDialog.darkDialog span {
+  text-align: center;
+}
+
 
 .darkDialog button {
   font-family: "bold";
