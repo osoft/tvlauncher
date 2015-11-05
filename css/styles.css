@@ -150,6 +150,7 @@ body {
   text-align: left;
   font-size: 24px;
   color: #eeeeee;
+  opacity: 0.7;
 }
 
 #timeoutDialog.darkDialog span {
