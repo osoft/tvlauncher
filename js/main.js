@@ -38,9 +38,9 @@ function launchTest(testId, testType) {
   $('#timeoutDialog > div > div:nth-of-type(7) > span').text("Test " + (currentTypeIndex + currentTestIndex * testTypes.length + 1) + " of " + tests.length * testTypes.length + ":");
 
   if (testType === "apps") {
-    $('#timeoutDialog > div > div:nth-of-type(9) > span').html('Find the app "CBS News"');
+    $('#timeoutDialog > div > div:nth-of-type(9) > span').html('Find the app <span class="spanKeyword">"CBS News"</span>');
   } else if (testType === "inputs") {
-    $('#timeoutDialog > div > div:nth-of-type(9) > span').html('Find the input source "PlayStation"');
+    $('#timeoutDialog > div > div:nth-of-type(9) > span').html('Find the input source <span class="spanKeyword">"PlayStation"</span>');
   }
   $('#timeoutDialog').css("display", "inherit");
 
