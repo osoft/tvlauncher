@@ -26,7 +26,7 @@ $(window).load(function() {
 function launchTest(testId, testType) {
   var testCounter = currentTypeIndex + currentTestIndex * testTypes.length + 1;
   if (testCounter === 1) {
-    $('#timeoutDialog > div > div:nth-of-type(1) > span').text("The test will take approximately in total 5 minutes, please make sure you have this much of uninterrupted time.");
+    $('#timeoutDialog > div > div:nth-of-type(1) > span').text("The test will take approximately in total 5 minutes. Please make sure you have this much of uninterrupted time.");
     $('#timeoutDialog > div > div:nth-of-type(3) > span').text("Use your keyboard to:");
     $('#timeoutDialog > div > div:nth-of-type(5) > span').html("&#x21E6;&#x21E7;&#x21E8;&#x21E9;: Move focus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter/Return: Select");
   } else {
@@ -38,9 +38,9 @@ function launchTest(testId, testType) {
   $('#timeoutDialog > div > div:nth-of-type(7) > span').text("Test " + (currentTypeIndex + currentTestIndex * testTypes.length + 1) + " of " + tests.length * testTypes.length + ":");
 
   if (testType === "apps") {
-    $('#timeoutDialog > div > div:nth-of-type(9) > span').text("Find the app 'CBS News'");
+    $('#timeoutDialog > div > div:nth-of-type(9) > span').html('Find the app "CBS News"');
   } else if (testType === "inputs") {
-    $('#timeoutDialog > div > div:nth-of-type(9) > span').text("Find the input 'PlayStation'");
+    $('#timeoutDialog > div > div:nth-of-type(9) > span').html('Find the input source "PlayStation"');
   }
   $('#timeoutDialog').css("display", "inherit");
 
@@ -63,9 +63,9 @@ function launchTest(testId, testType) {
 
     $("#spanIdx").text("Test " + (currentTypeIndex + currentTestIndex * testTypes.length + 1) + " of " + tests.length * testTypes.length);
     if (testType === "apps") {
-      $("#spanTarget").text('Please find the app "CBS News"');
+      $("#spanTarget").text('Find the app "CBS News"');
     } else if (testType === "inputs") {
-      $("#spanTarget").text('Please find "PlayStation" from Inputs');
+      $("#spanTarget").text('Find the input source "PlayStation"');
     }
   });
 

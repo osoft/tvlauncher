@@ -158,10 +158,10 @@ body {
 
 
 .darkDialog button {
-  font-family: "bold";
+  font-family: "regular";
   text-align: center;
-  font-size: 30px;
-  color: #333333;
+  font-size: 24px;
+  color: #000000;
 }
 
 .leftTitlePane {
@@ -270,7 +270,7 @@ iframe {
 
 .overlayNotification {
   color: #eeeeee;
-  font-family: "light" ;
+  font-family: "regular" ;
   position: absolute;
   font-size: 18px;
   z-index: 998;
@@ -280,6 +280,11 @@ iframe {
 }
 
 .overlayNotification #spanTarget {
-  font-size: 25px;
+  font-size: 22px;
+  font-family: "regular";
+}
+
+.overlayNotification #spanHint {
+  font-size: 22px;
   font-family: "regular";
 }
