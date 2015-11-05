@@ -141,20 +141,31 @@ body {
   text-align: left;
 }
 
-
+#timeoutDialog.darkDialog > div > div {
+  text-align: center;
+}
 
 .darkDialog span {
   font-family: "regular";
   text-align: left;
   font-size: 24px;
-  color: #eeeeee;
+  color: rgba(238, 238, 238, 0.7);
 }
 
-.darkDialog button {
-  font-family: "bold";
+span.spanKeyword {
+  color: rgba(238, 238, 238, 1);
+}
+
+#timeoutDialog.darkDialog span {
   text-align: center;
-  font-size: 30px;
-  color: #333333;
+}
+
+
+.darkDialog button {
+  font-family: "regular";
+  text-align: center;
+  font-size: 24px;
+  color: #000000;
 }
 
 .leftTitlePane {
@@ -263,7 +274,7 @@ iframe {
 
 .overlayNotification {
   color: #eeeeee;
-  font-family: "light" ;
+  font-family: "regular" ;
   position: absolute;
   font-size: 18px;
   z-index: 998;
@@ -273,6 +284,11 @@ iframe {
 }
 
 .overlayNotification #spanTarget {
-  font-size: 25px;
+  font-size: 22px;
+  font-family: "regular";
+}
+
+.overlayNotification #spanHint {
+  font-size: 22px;
   font-family: "regular";
 }
